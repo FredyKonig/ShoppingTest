@@ -1,0 +1,2 @@
+# ShoppingTest
+Shopping  promotion example
