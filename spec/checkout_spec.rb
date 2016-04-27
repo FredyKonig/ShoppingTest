@@ -42,8 +42,7 @@ describe Checkout do
 
     end
 
-#subject { Checkout.new([1,2]) }
-    context 'with multibuy promotion' do
+    context 'with promotion' do
       
       describe 'scanning products' do
         let(:product) { ProductStub.new('001', 'Lavender heart', 9.25) }
@@ -85,4 +84,43 @@ describe Checkout do
        end
       end  
 	end
+
+ context 'reflecting multibuy and discount rate test example' do
+      
+      describe 'scanning products' do
+        let(:product) { ProductStub.new('001', 'Lavender heart', 9.25) }
+        let(:product2) { ProductStub.new('002', 'Personalised cufflinks', 45.00) }
+        let(:product3) { ProductStub.new('003', 'Kids T-shirt', 19.95) }
+      
+       
+       it 'should calculate total reflecting multibuy and discount rate for the 1st example' do
+       	 subject.add_rule(1)
+       	 subject.add_rule(2)
+         subject.scan(product)
+         subject.scan(product2)
+         subject.scan(product3)
+         expect(subject.total).to eq(66.78)
+       end
+
+       it 'should calculate total reflecting multibuy and discount rate for the 2nd example' do
+       	 subject.add_rule(1)
+       	 subject.add_rule(2)
+         subject.scan(product)
+         subject.scan(product3)
+         subject.scan(product)
+         expect(subject.total).to eq(36.95)
+       end
+
+       it 'should calculate total reflecting multibuy and discount rate for the 3rd example' do
+       	 subject.add_rule(1)
+       	 subject.add_rule(2)
+         subject.scan(product)
+         subject.scan(product2)
+         subject.scan(product)
+         subject.scan(product3)
+         expect(subject.total).to eq(73.75)
+       end
+      end  
+	end
+
 end

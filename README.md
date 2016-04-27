@@ -17,6 +17,7 @@ Our marketing team want to offer promotions as an incentive for our customers to
 If you spend over £60, then you get 10% off of your purchase. If you buy 2 or more lavender hearts then the price drops to £8.50.
 Our check-out can scan items in any order, and because our promotions will change, it needs to be flexible regarding our promotional rules.
 The interface to our checkout looks like this (shown in Ruby):
+
    co = Checkout.new(promotional_rules)
    co.scan(item)
    co.scan(item)
@@ -24,6 +25,7 @@ The interface to our checkout looks like this (shown in Ruby):
 
 
 Implement a checkout system that fulfills these requirements. Do this outside of any frameworks. We’re looking for candidates to demonstrate their knowledge of TDD.
+
 
 Test data
 ---------
@@ -34,4 +36,4 @@ Basket: 001,003,001
 Total price expected: £36.95
 
 Basket: 001,002,001,003
-Total price expected: £73.76
+Total price expected: £73.75

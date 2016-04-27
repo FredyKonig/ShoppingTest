@@ -11,16 +11,16 @@ TEN_OVER_SIXTY_POUNDS = 2
          @minimum_product   = nil
          @minimum_spend     = nil
          @discount_rate     = nil
-	#multibuy
+	    
 	if( type_value == MULTIBUY_LAVENDER)
 		 @product_code      = "001"
          @discounted_product_price = 8.50
          @minimum_product   = 2
-         puts "MULTIBUY_LAVENDER"
+         #puts "MULTIBUY_LAVENDER"
     elsif (type_value==TEN_OVER_SIXTY_POUNDS)
     	 @minimum_spend     = 60
          @discount_rate     = 10
-         puts "TEN_OVER_SIXTY_POUNDS"
+         #puts "TEN_OVER_SIXTY_POUNDS"
     else
     	 puts "no discount"
 	end

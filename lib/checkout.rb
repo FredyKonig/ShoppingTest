@@ -31,8 +31,7 @@ class Checkout
          discount=discount+rebate.calculate_discount(@items,subtotal) 
          end
       end
-      discount.round(2)
-      subtotal=subtotal-discount.round(2)
+      subtotal=subtotal-discount
       @promotions.each do |promotion|
          if [PromotionRule::TEN_OVER_SIXTY_POUNDS].include? promotion
          rebate = Discount.new(promotion)
